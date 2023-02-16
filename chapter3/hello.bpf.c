@@ -1,7 +1,7 @@
 #include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
 
-int counter = 0;
+static __u64 counter = 0;
 
 SEC("xdp")
 int hello(struct xdp_md *ctx) {
